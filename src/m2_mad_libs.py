@@ -27,10 +27,11 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+#define function get_word with a parameter called part_of_speech. within the body of the function ask user for a part of speech through user_input command and f string. then return and call.
 def get_word(part_of_speech): 
     user_input = input(f"Please enter a(n) {part_of_speech}: ")
     return user_input 
-print(get_word("noun"))
+get_word("noun")
 ###############################################################################
 # DONE: 2. (3 pts)
 #
@@ -45,10 +46,11 @@ print(get_word("noun"))
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# Same rules/directions apply to this as previous one
 def get_name(): 
     user_input = input("Please enter your name: ")
     return user_input 
-print(get_name())
+get_name()
 ###############################################################################
 # DONE: 3. (9 pts)
 #
@@ -73,7 +75,8 @@ print(get_name())
 #   Make sure you call your main() function after you define it.
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
-###############################################################################
+################################################################################
+# Create a main function where it prompts user for name by putting the function from to do 1 saved to a variable. Then save the other functions to variable and place in the parameters that need to be used within parantheses. Then print statement with the user input by using f strings. 
 def main(): 
     print("Let's play Mad Libs!")
     user_name = get_name() 
@@ -81,9 +84,7 @@ def main():
     user_noun = get_word("noun")
     user_verb_ing = get_word("verb ending in -ing")
     user_adjective = get_word("adjective")
-    mad_lib_template = "This semester, I hope to join the {noun} club and go {verb_ing}. It is going to be a(n) {adjective} semester!"
-    filled_mad_lib = mad_lib_template.format(noun=user_noun, verb_ing=user_verb_ing, adjective=user_adjective)
-    print(f"\nMad Lib:\n{filled_mad_lib}")
-
+    mad_lib_template = f"This semester, I hope to join the {user_noun} club and go {user_verb_ing}. It is going to be a(n) {user_adjective} semester!"
+    print(mad_lib_template)
 main()
 

@@ -20,15 +20,12 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# define a function that takes one parameter within function ask for user input for how many hours as a float then return the value.
 def get_hours(day_of_week): 
-    user_input = input(f"How many hours did you work on {day_of_week}? ")
-    try:
-        hours_worked = float(user_input)
-        return hours_worked
-    except ValueError:
-        print("Please enter a valid number of hours.")
-        return get_hours(day_of_week)
-print("The amount of hours worked on MondaY: ", get_hours("Monday"))
+    user_input = float(input(f"How many hours did you work on {day_of_week}? "))
+    return user_input
+get_hours("Monday") 
+
 
 ###############################################################################
 # DONE: 2. (3 pts)
@@ -45,10 +42,11 @@ print("The amount of hours worked on MondaY: ", get_hours("Monday"))
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+#Define a function and place keyword arguments within parantheses then calculate total hours and return result
 def calculate_hours(mon, tues, wed, thurs, fri): 
     total_hours = mon + tues + wed + thurs + fri 
     return total_hours 
-print("Total hours worked: ", calculate_hours(mon=8.5, tues=7.5, wed=8.0, thurs=9.0, fri=6.5))
+calculate_hours(8, 7.5, 6, 8, 7)
 
 ###############################################################################
 # DONE: 3. (3 pts)
@@ -69,10 +67,11 @@ print("Total hours worked: ", calculate_hours(mon=8.5, tues=7.5, wed=8.0, thurs=
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# Same as previous to do 
 def calculate_pay(total_hours, pay_rate): 
     total_pay = total_hours * pay_rate 
     return total_pay 
-print("Total pay for the week:", calculate_pay(40.0, 15.0))
+calculate_pay(60,25.50)
 ###############################################################################
 # DONE: 4. (9 pts)
 #
@@ -119,6 +118,7 @@ print("Total pay for the week:", calculate_pay(40.0, 15.0))
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# define a function main. Save get_hours to a variable for each day. Calculate total hours and then propmt user for pay rate which would lead to calculate total pay. Print results. 
 def main(): 
     print("Let's calculate your pay!")
     hours_monday = get_hours("Monday")
@@ -128,15 +128,8 @@ def main():
     hours_friday = get_hours("Friday")
     total_week_hours = calculate_hours(mon=hours_monday, tues=hours_tuesday, wed=hours_wednesday, thurs=hours_thursday, fri=hours_friday)
     pay_rate = float(input("How much are you currently paid per hour? "))
-    total_pay = calculate_pay(total_hours=total_week_hours, pay_rate=pay_rate)
-    print(f"\nMonday: {hours_monday} hour(s)")
-    print(f"Tuesday: {hours_tuesday} hour(s)")
-    print(f"Wednesday: {hours_wednesday} hour(s)")
-    print(f"Thursday: {hours_thursday} hour(s)")
-    print(f"Friday: {hours_friday} hour(s)")
-    print(f"Total Hours: {total_week_hours} hour(s)")
-    print(f"Pay Rate: ${pay_rate} per hour")
-    print(f"Total Pay: ${total_pay}")
+    total_pay = calculate_pay(total_week_hours,pay_rate)
+    print(f"Monday: {hours_monday} hour(s)\n Tuesday: {hours_tuesday} hour(s)\n Wednesday: {hours_wednesday} hour(s)\n Thursday: {hours_thursday} hour(s)\n Friday: {hours_friday} hour(s)/n Total Hours: {total_week_hours} hour(s)\n Pay Rate: ${pay_rate} per hour\n Total Pay: ${total_pay}")
 main() 
 
 
@@ -149,15 +142,9 @@ def main():
     hours_friday = get_hours("Friday")
     total_week_hours = calculate_hours(mon=hours_monday, tues=hours_tuesday, wed=hours_wednesday, thurs=hours_thursday, fri=hours_friday)
     pay_rate = float(input("How much are you currently paid per hour? "))
-    total_pay = calculate_pay(total_hours=total_week_hours, pay_rate=pay_rate)
-    print(f"\nMonday: {hours_monday} hour(s)")
-    print(f"Tuesday: {hours_tuesday} hour(s)")
-    print(f"Wednesday: {hours_wednesday} hour(s)")
-    print(f"Thursday: {hours_thursday} hour(s)")
-    print(f"Friday: {hours_friday} hour(s)")
-    print(f"Total Hours: {total_week_hours} hour(s)")
-    print(f"Pay Rate: ${pay_rate:.2f} per hour")
-    print(f"Total Pay: ${total_pay:.2f}")
+    total_pay = calculate_pay(total_week_hours,pay_rate)
+    print(f"Monday: {hours_monday} hour(s)\n Tuesday: {hours_tuesday} hour(s)\n Wednesday: {hours_wednesday} hour(s)\n Thursday: {hours_thursday} hour(s)\n Friday: {hours_friday} hour(s)/n Total Hours: {total_week_hours} hour(s)\n Pay Rate: ${pay_rate:.2f} per hour\n Total Pay: ${total_pay:.2f}")
+   
 main()
 
 

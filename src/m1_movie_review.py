@@ -15,11 +15,13 @@
 #   title.
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
-###############################################################################
+##############################################################################
+# Defined a function called movie and asked user input for a movie title and return title
+
 def movie(): 
     title = input("Please enter a movie title: ")
     return title
-print(movie())
+movie()
 #####################################################
 # DONE: 2. (4 pts)
 #
@@ -34,19 +36,11 @@ print(movie())
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+# Same as before where define a function and ask input from user however since asking for numeric rating you place float in front of it. Within command/ body of the function return the title. then call the function.
 def rating(): 
-    user_input = input("Please enter a movie rating (1-5): ")
-    try: 
-        user_rating = float(user_input)
-        if 1 <= user_rating <= 5: 
-            return user_rating 
-        else: 
-            print("Please enter a valid rating between 1 and 5.")
-            return rating()
-    except ValueError: 
-        print("Please enter a valid numeric rating.")
-        return rating 
-print(rating())
+    user_input = float(input("Please enter a movie rating (1-5): "))
+    return user_input
+rating()
 
 ###############################################################################
 # DONE: 3. (3 pts)
@@ -63,6 +57,7 @@ print(rating())
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+#Same as previous to do 
 def review(): 
     user_input = input("Please enter a brief review: ")
     return user_input 
@@ -93,12 +88,13 @@ print(review())
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+#define a main function where it takes multiple calls thus save the function to variable and then by using f strings can create response to print. call function.
 def main(): 
     print("Please write your moview review below.")
     movie_title = movie() 
     movie_rating = rating()
-    movie_review = review() 
-    print(f"\nMovie: {movie_title}")
-    print(f"Rating: {movie_rating:.1f}/5")
+    movie_review = review()
+    print(f"Movie: {movie_title}")
+    print(f"Rating:{movie_rating}/5")
     print(f"Review: {movie_review}")
 main()
